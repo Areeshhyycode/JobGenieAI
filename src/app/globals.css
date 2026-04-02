@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0f111a;
+  --bg-card: #1a1d2e;
+  --bg-border: #2a2d3e;
+  --text-primary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --brand: #6366f1;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2d3e #0f111a;
+}
+
+body {
+  @apply bg-dark-bg text-dark-text antialiased;
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f111a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2d3e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3d4e;
+}
+
+/* Smooth transitions */
+.page-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-dark-card/80 backdrop-blur-xl border border-dark-border;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-brand-light to-purple-400 bg-clip-text text-transparent;
+}
