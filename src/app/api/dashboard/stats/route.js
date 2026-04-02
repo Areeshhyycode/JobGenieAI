@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import mongoose from 'mongoose';
 import { getUser } from '@/lib/getUser';
 import connectDB from '@/lib/mongodb';
 import Application from '@/models/Application';
@@ -12,7 +13,7 @@ export async function GET(request) {
 
   await connectDB();
 
-  const userId = user.id;
+  const userId = new mongoose.Types.ObjectId(user.id);
 
   // Status counts
   const statusCounts = await Application.aggregate([
